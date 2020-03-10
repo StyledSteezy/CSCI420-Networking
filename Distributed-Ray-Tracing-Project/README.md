@@ -142,7 +142,7 @@ Running with 7 servers: try #3
 - Average render time = 35 seconds
 - Wall-clock time = 314 seconds
 
-# Observation
+# Observations
 Running 3 servers vs 1 server:
 - Improvement = 54 seconds. This is good and shows that because the work is being distributed
 there is a significant improvement.
