@@ -120,7 +120,40 @@ tracing by distributing the work over multiple servers. Although, splitting up t
 than a certain amount of servers does not guarantee an improvement in time.
 
 # Analysis
+600x600 scene
 
+Running with 1 server:
+- Render time = 157 seconds
+- Wall-clock time = 171 seconds
+
+Running with 3 servers:
+- Average render time = 59 seconds
+- Wall-clock time = 117 seconds
+
+Running with 7 servers: try #1
+- Average render time = 33 seconds
+- Wall-clock time = 319 seconds
+
+Running with 7 servers: try #2
+- Average render time = 30 seconds
+- Wall-clock time = 344 seconds
+
+Running with 7 servers: try #3
+- Average render time = 35 seconds
+- Wall-clock time = 314 seconds
+
+# Observation
+Running 3 servers vs 1 server:
+- Improvement = 54 seconds. This is good and shows that because the work is being distributed
+there is a significant improvement.
+
+Running 7 servers vs 3 servers:
+- The average rendering time for each server is improved, which was expected because the scene
+is broken up into smaller pieces, allowing each server to do less work. Although, the wall-clock
+time was much better with 3 servers opposed to 7 servers. I hypothesize that this is happening
+because more packets need to be sent from the server to the client. Which means that the chances
+of packets being dropped increases. When the packets are dropped the server needs to resend
+them, which takes time, therefore lowering the performance.
 
 # Contributors
 Christian Tomford, Caleb Lyon, and Mohammad Pahlevan
